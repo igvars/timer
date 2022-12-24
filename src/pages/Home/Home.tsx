@@ -6,12 +6,20 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  gap: 15px;
 `;
 
 function Home() {
   return (
     <Wrapper>
-      <Timer testId="clock" size={150} time={5} color="#25d725" />
+      <Timer testId="clock" size={100} time={60} color="#25d725" />
+      <Timer
+        testId="clock"
+        size={100}
+        time={60}
+        color="#25d725"
+        secondColor="#ff0000"
+      />
     </Wrapper>
   );
 }

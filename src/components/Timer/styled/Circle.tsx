@@ -10,10 +10,20 @@ const timer = (size: number) => keyframes`
   }
 `;
 
+const changeColor = (firstColor: Color, secondColor: Color) => keyframes`
+  0% {
+    stroke: ${firstColor};
+  }
+  100% {
+    stroke: ${secondColor};
+  }
+`;
+
 interface Props {
   size: number;
   time: number;
   color: Color;
+  secondColor: Color;
 }
 
 export const Circle = styled.circle<Props>`
@@ -23,6 +33,7 @@ export const Circle = styled.circle<Props>`
   stroke: ${({ color }) => color};
   stroke-dasharray: ${({ size }) => size * Math.PI};
   stroke-width: 100%;
-  animation: ${({ time }) => `${time}s`} linear ${({ size }) => timer(size)};
+  animation: ${({ time }) => `${time}s`} linear ${({ size }) => timer(size)},
+    0.3s linear ${({ time }) => `${time / 2}s`} ${({ color, secondColor }) => changeColor(color, secondColor)};
   animation-fill-mode: forwards;
 `;

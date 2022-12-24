@@ -13,12 +13,19 @@ interface Props {
   size: number;
   time: number;
   color: Color;
+  secondColor?: Color;
 }
 
-function Timer({ testId, size, time, color }: Props) {
+function Timer({ testId, size, time, color, secondColor }: Props) {
   const radius = size / 2;
   return (
-    <Wrapper data-testid={testId} size={size} color={color}>
+    <Wrapper
+      data-testid={testId}
+      size={size}
+      color={color}
+      secondColor={secondColor ?? color}
+      time={time}
+    >
       <Svg size={size}>
         <Circle
           cx={radius}
@@ -27,6 +34,7 @@ function Timer({ testId, size, time, color }: Props) {
           size={size}
           time={time}
           color={color}
+          secondColor={secondColor ?? color}
         />
       </Svg>
     </Wrapper>
