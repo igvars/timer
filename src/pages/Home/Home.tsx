@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 function Home() {
   return (
     <Wrapper>
-      <Timer testId="clock" />
+      <Timer testId="clock" size={150} time={5} color="#25d725" />
     </Wrapper>
   );
 }

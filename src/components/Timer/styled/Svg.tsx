@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
-export const Svg = styled.svg`
+interface Props {
+  size: number;
+}
+
+export const Svg = styled.svg<Props>`
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: ${({ size }) => `${size}px`};
+  height: ${({ size }) => `${size}px`};
   transform: rotate(270deg);
   border-radius: 50%;
 `;
