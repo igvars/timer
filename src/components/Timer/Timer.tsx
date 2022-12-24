@@ -1,4 +1,6 @@
-import "./styles.css";
+import { Circle } from "./styled/Circle";
+import { Svg } from "./styled/Svg";
+import { Wrapper } from "./styled/Wrapper";
 
 interface Props {
   testId?: string;
@@ -6,11 +8,11 @@ interface Props {
 
 function Timer({ testId }: Props) {
   return (
-    <div className="Clock" data-testid={testId}>
-      <svg className="svg">
-        <circle className="timer" cx={75} cy={75} r={75}></circle>
-      </svg>
-    </div>
+    <Wrapper data-testid={testId}>
+      <Svg>
+        <Circle cx={75} cy={75} r={75} />
+      </Svg>
+    </Wrapper>
   );
 }
 
