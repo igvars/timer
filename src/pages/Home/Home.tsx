@@ -10,15 +10,16 @@ const Wrapper = styled.div`
 `;
 
 function Home() {
+  const style = getComputedStyle(document.body)
   return (
     <Wrapper>
-      <Timer testId="clock" size={100} time={60} color="#25d725" />
+      <Timer testId="clock1" size={100} time={120} color={style.getPropertyValue('--bs-green')} />
       <Timer
-        testId="clock"
+        testId="clock2"
         size={100}
-        time={60}
-        color="#25d725"
-        secondColor="#ff0000"
+        time={5}
+        color={style.getPropertyValue('--bs-green')}
+        secondColor={style.getPropertyValue('--bs-danger')}
       />
     </Wrapper>
   );

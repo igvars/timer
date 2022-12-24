@@ -2,18 +2,13 @@ import { Circle } from "./styled/Circle";
 import { Svg } from "./styled/Svg";
 import { Wrapper } from "./styled/Wrapper";
 
-type RGB = `rgb(${number}, ${number}, ${number})`;
-type RGBA = `rgba(${number}, ${number}, ${number}, ${number})`;
-type HEX = `#${string}`;
-
-export type Color = RGB | RGBA | HEX;
 
 interface Props {
   testId?: string;
   size: number;
   time: number;
-  color: Color;
-  secondColor?: Color;
+  color: string;
+  secondColor?: string;
 }
 
 function Timer({ testId, size, time, color, secondColor }: Props) {

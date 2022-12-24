@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import { Color } from "../Timer";
 
 const timer = (size: number) => keyframes`
   0% {
@@ -10,7 +9,7 @@ const timer = (size: number) => keyframes`
   }
 `;
 
-const changeColor = (firstColor: Color, secondColor: Color) => keyframes`
+const changeColor = (firstColor: string, secondColor: string) => keyframes`
   0% {
     stroke: ${firstColor};
   }
@@ -22,8 +21,8 @@ const changeColor = (firstColor: Color, secondColor: Color) => keyframes`
 interface Props {
   size: number;
   time: number;
-  color: Color;
-  secondColor: Color;
+  color: string;
+  secondColor: string;
 }
 
 export const Circle = styled.circle<Props>`
